@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Croissant+One&family=Orbitron:wght@400..900&display=swap');
+:root{
+  --bg:#b3dffd; --card:#ffffff; --muted:#6b7280; --text:#0f172a; --accent:#0ea5a4;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Croissant One", serif, Roboto;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:20px}
+
+
+
+
+/* --- Barra flotante de redes --- */
+.social-bar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.icon.whatsapp { background-color: #25d366; }
+.icon.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); }
+.icon.github { background-color: #010101; }
+.icon.email { background-color: #2563eb; }
+
+.icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.container {
+  display: flex;
+  gap: 2%;
+  flex-wrap: wrap;
+  align-content: start;
+}
+
+.item:nth-child(1),
+.item:nth-child(4) {
+  width: 100%;
+  height: 5%;
+}
+
+.item:nth-child(2) {
+  width: 25%;
+  height: 75%;
+}
+/* Header */
+.site-header{position:sticky;top:0;background:rgba(255,255,255,0.75);backdrop-filter:blur(6px);z-index:70;border-bottom:1px solid rgba(2,6,23,0.04)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-logo{width:56px;height:56px;object-fit:contain;border-radius:10px}
+.brand-name{margin:0;font-size:1.05rem}
+.brand-role{margin:0;color:var(--muted);font-size:.9rem}
+.main-nav a{margin-left:12px;color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+.main-nav a.active, .main-nav a:hover{color:var(--text)}
+
+/* Hero */
+/* ----------------------------------------------------
+   HERO MODERNO — DISEÑO MEJORADO
+---------------------------------------------------- */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 90px 60px;
+  border-radius: 25px;
+
+  /* Fondo degradado elegante */
+  background: linear-gradient(135deg, #0d1226, #1c2340, #222a50);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+  color: white;
+}
+
+/* -----------------------------------------
+   Columna IZQUIERDA
+----------------------------------------- */
+.hero-left {
+  flex: 1;
+  max-width: 520px;
+}
+
+.hero-left h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.25;
+}
+
+.hero-left .lead {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: .9;
+}
+
+/* Botones */
+.ctas {
+  margin: 28px 0;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .25s ease;
+  border: 2px solid transparent;
+}
+
+.btn.primary {
+  background: #0078ff;
+}
+.btn.primary:hover {
+  background: #3396ff;
+}
+
+.btn.outline {
+  color: #fff;
+  border-color: #fff;
+}
+.btn.outline:hover {
+  background: #ffffff25;
+}
+
+.meta li {
+  margin-bottom: 5px;
+}
+
+/* -----------------------------------------
+   Columna DERECHA (FOTO + CARDS)
+----------------------------------------- */
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 85px;
+}
+
+/* FOTO DEL HERO */
+.hero-right .avatar {
+  width: 320px;
+  border-radius: 20px;
+  object-fit: cover;
+
+  /* Sombra moderna */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Card GLASS */
+.profile-card,
+.achievements {
+  width: 100%;
+  max-width: 420px;
+  padding: 22px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  color: #fff;
+}
+
+.profile-card h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+/* Chips */
+.profile-card .chips span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.17);
+  padding: 6px 14px;
+  border-radius: 12px;
+  margin-right: 6px;
+  margin-top: 8px;
+}
+
+/* -----------------------------------------
+   RESPONSIVE
+----------------------------------------- */
+@media (max-width: 980px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .hero-right .avatar {
+    width: 260px;
+  }
+}
+
+
+/* Right panel */
+.hero-right{display:block}
+.profile-card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 10px 26px rgba(2,6,23,0.06);display:flex;gap:12px;align-items:center}
+.avatar{width:92px;height:92px;object-fit:cover;border-radius:10px}
+.info h3{margin:0}
+.small{color:var(--muted);font-size:.95rem}
+.chips span{display:inline-block;background:#eefbf9;color:#055b56;padding:6px 8px;border-radius:8px;margin-right:6px;margin-top:8px; font-size:.85rem}
+.achievements{margin-top:14px;padding:12px}
+
+.experience {
+  padding: 50px 20px;
+}
+
+.experience h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.exp-cards {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.exp-card {
+  background: #89303010;
+  backdrop-filter: blur(8px);
+  border: 1px solid #b0151530;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.exp-card .date {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #0b0b0b;
+}
+
+.exp-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+.exp-card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+/* Footer */
+.site-footer{padding:18px 0;border-top:1px solid rgba(2,6,23,0.04);color:var(--muted)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between}
+
+/* Responsive */
+@media(min-width:900px){
+  .hero{grid-template-columns:1fr 360px}
+  .main-nav a{margin-left:18px}
+}
+.footer {
+background: linear-gradient(to right, #e0f7fa, #b2ebf2, #ffffff);color: var(--text); text-align: center; padding: 5px 0;
+}
+.education {
+  padding: 50px 20px;
+}
+
+.education h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.edu-cards {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.edu-card {
+  background: #ffffff10;
+  backdrop-filter: blur(8px);
+  border: 1px solid #ffffff30;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.edu-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+.edu-card .date {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #0e0e0e;
+}
+
+.edu-card p {
+  margin: 0;
+  line-height: 1.5;
+}
+

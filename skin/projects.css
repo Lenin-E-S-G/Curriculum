@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Croissant+One&family=Orbitron:wght@400..900&display=swap');
+:root{
+  --bg:#1b86cd; --card:#ffffff; --muted:#6b7280; --text:#0f172a; --accent:#0ea5a4;
+}
+
+/* Header */
+.site-header{position:sticky;top:0;background:rgba(255,255,255,0.75);backdrop-filter:blur(6px);z-index:70;border-bottom:1px solid rgba(2,6,23,0.04)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-logo{width:56px;height:56px;object-fit:contain;border-radius:10px}
+.brand-name{margin:0;font-size:1.05rem}
+.brand-role{margin:0;color:var(--muted);font-size:.9rem}
+.main-nav a{margin-left:12px;color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+.main-nav a.active, .main-nav a:hover{color:var(--text)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px}
+.social-bar{position:fixed;left:12px;top:40%;display:flex;flex-direction:column;gap:10px;z-index:80}
+.social-bar a{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:var(--card);border-radius:10px;text-decoration:none}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Croissant One", serif;background:#fbfdff;color:var(--text)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px}
+.social-bar{position:fixed;left:12px;top:40%;display:flex;flex-direction:column;gap:10px;z-index:80}
+.social-bar a{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:var(--card);border-radius:10px;text-decoration:none}
+
+/* Projects layout */
+.projects-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.proj-card a{display:block;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(2,6,23,0.06);text-decoration:none;color:inherit;transition:transform .22s}
+.proj-card a:hover{transform:translateY(-8px)}
+.proj-card img{width:100%;height:180px;object-fit:cover}
+.proj-card .body{padding:12px}
+.tag{display:inline-block;background:#eefbf9;color:#055b56;padding:6px 8px;border-radius:8px;font-weight:700}
+
+/* Certificados */
+.cert-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.cert-card{display:flex;gap:12px;align-items:center;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 10px 28px rgba(2,6,23,0.05)}
+.cert-card img{width:140px;height:100px;object-fit:cover;border-radius:8px}
+.cert-body h3{margin:0 0 6px}
+
+/* Responsive */
+@media(min-width:800px){
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+  .cert-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1100px){
+  .projects-grid{grid-template-columns:repeat(3,1fr)}
+  .cert-grid{grid-template-columns:repeat(3,1fr)}
+}
+.footer {
+    /* 1. Fondo Degradado (Celeste / Azul Claro a Blanco/Gris) */
+    /* Puedes ajustar los colores y la dirección (to top right) */
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2, #ffffff);
+    
+    /* 2. Color de texto blanco/oscuro para contraste. 
+       Aquí elegimos el color oscuro de tu variable original (--text) 
+       porque el degradado es claro. */
+    color: var(--text); 
+    
+    /* 3. Centrar el texto horizontalmente */
+    text-align: center; 
+    
+    /* 4. Mantiene el padding */
+    padding: 5px 0;
+}

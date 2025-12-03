@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Croissant+One&family=Orbitron:wght@400..900&display=swap');
+:root{
+  --bg:#1b86cd; --card:#ffffff; --muted:#6b7280; --text:#0f172a; --accent:#0ea5a4;
+}
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: "Croissant One", serif;
+  color:var(--text);
+  background-attachment: fixed; 
+  margin:0 auto;
+  padding:20px}
+*{box-sizing:border-box}
+
+
+/* Header */
+.site-header{position:sticky;top:0;background:rgba(255,255,255,0.75);backdrop-filter:blur(6px);z-index:70;border-bottom:1px solid rgba(2,6,23,0.04)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-logo{width:56px;height:56px;object-fit:contain;border-radius:10px}
+.brand-name{margin:0;font-size:1.05rem}
+.brand-role{margin:0;color:var(--muted);font-size:.9rem}
+.main-nav a{margin-left:12px;color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+.main-nav a.active, .main-nav a:hover{color:var(--text)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px}
+.social-bar{position:fixed;left:12px;top:40%;display:flex;flex-direction:column;gap:10px;z-index:80}
+.social-bar a{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:var(--card);border-radius:10px;text-decoration:none}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+
+/* Cards grid */
+.cards{display:grid;grid-template-columns:1fr;gap:18px}
+.card{background:linear-gradient(180deg,#ffffff,#fbfdff);border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(2,6,23,0.06);transition:transform .28s,opacity .3s;opacity:0;transform:translateY(18px)}
+.card.show{opacity:1;transform:none}
+.circle{display:flex;align-items:center;justify-content:center;height:72px;background:linear-gradient(90deg,#1f71a7,#e6fffa)}
+.logo{width:48px;height:48px;object-fit:contain}
+.product_img{width:100%;height:160px;object-fit:cover}
+.content{padding:12px}
+.content h3{margin:0 0 6px}
+.content p{color:var(--muted);margin:0;text-align: justify;}
+
+/* Soft skills */
+
+.soft-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.soft-card.show{opacity:1;transform:none}
+.soft-card{
+    padding:16px;
+    /* Ejemplo: Fondo degradado suave de la variable a #ff9191 */
+    background: linear-gradient(to bottom, var(--card), #91aafd); 
+    border-radius:10px;
+    box-shadow:0 10px 24px rgba(2,6,23,0.04);
+    opacity:0;
+    transform:translateY(10px);
+    transition:all .32s
+}
+
+
+
+
+
+
+/* Responsive */
+@media(min-width:700px){ .cards{grid-template-columns:repeat(2,1fr)} .soft-grid{grid-template-columns:repeat(2,1fr)} }
+@media(min-width:1100px){ .cards{grid-template-columns:repeat(3,1fr)} .soft-grid{grid-template-columns:repeat(3,1fr)} }
+
+/* --- Barra flotante de redes --- */
+.social-bar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.icon.whatsapp { background-color: #25d366; }
+.icon.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); }
+.icon.github { background-color: #010101; }
+.icon.email { background-color: #2563eb; }
+
+.icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.container {
+  display: flex;
+  gap: 2%;
+  flex-wrap: wrap;
+  align-content: start;
+}
+
+.item:nth-child(1),
+.item:nth-child(4) {
+  width: 100%;
+  height: 5%;
+}
+
+.item:nth-child(2) {
+  width: 25%;
+  height: 75%;
+}
